@@ -1,17 +1,3 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 .circle {
   width: 182px;
   height: 178px;
@@ -27,27 +13,27 @@ code {
 
 .percent .track {
   stroke: #fff;
-  fill: none;
+  /* fill: none; */
   stroke-width: 2;
   stroke-dasharray: 8;
   transition: 0.5s;
 }
 
-/* .progress-circle {
+.progress-circle {
   stroke: #00875a;
   fill: none;
   stroke-width: 4;
   stroke-dasharray: 490;
   stroke-dashoffset: 0;
   transition: 2s;
-} */
+}
 
 .circle-container {
   position: absolute;
   top: 0;
   left: 0;
-  height: 123px;
-  width: 163px;
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
