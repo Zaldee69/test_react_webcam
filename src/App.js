@@ -56,7 +56,7 @@ function App() {
         ref={webcamRef}
         screenshotFormat="image/jpeg"
         videoConstraints={videoConstraints}
-        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        style={{ width: "100%", height: "60%", objectFit: "cover" }}
       />
       <div
         style={{
