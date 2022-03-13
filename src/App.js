@@ -53,7 +53,7 @@ function App() {
       <div
         style={{
           width: "90%",
-          height: "400px",
+          height: "60%",
           position: "relative",
           margin: "100px auto",
         }}
