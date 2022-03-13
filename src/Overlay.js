@@ -4,7 +4,7 @@ const Overlay = () => {
   return (
     <svg
       preserveAspectRatio="none"
-      style={{ borderRadius: "4px", objectFit: "cover", width: "100%" }}
+      style={{ borderRadius: "4px", width: "100%" }}
       viewBox="0 0 265 200"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"

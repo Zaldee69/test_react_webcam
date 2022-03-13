@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Overlay from "./Overlay";
 import Webcam from "react-webcam";
 import CircularProgressBar from "./CircularProgressBar";
+import Camera from "./Camera";
 function App() {
   const videoConstraints = {
     width: 680,
@@ -20,6 +21,9 @@ function App() {
     const track = document.getElementById("track");
     const webcam = document.getElementById("webcam");
 
+    overlay.style.height = webcam.clientHeight;
+    console.log(webcam.clientHeight);
+
     if (webcam.clientHeight < 210) {
       overlay.style.height = webcam.clientHeight;
       overlayCircle.setAttribute("rx", webcam.clientHeight / 4);
@@ -37,42 +41,55 @@ function App() {
       track.setAttribute("rx", webcam.clientHeight / 4 - 10);
       track.setAttribute("ry", webcam.clientWidth / 4 - 25);
     }
-
-    console.log(webcam.clientWidth);
   }, []);
 
   return (
     <div
       style={{
-        margin: "100px auto",
-        width: "25%",
-        height: "400px",
-        position: "relative",
+        backgroundColor: "#4F6EA0",
       }}
+      className="container"
     >
-      <Webcam
-        audio={false}
-        id="webcam"
-        ref={webcamRef}
-        screenshotFormat="image/jpeg"
-        videoConstraints={videoConstraints}
-        style={{ width: "100%", height: "60%", objectFit: "cover" }}
-      />
       <div
         style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          zIndex: 100,
-          width: "100%",
+          width: "90%",
+          height: "400px",
+          position: "relative",
+          margin: "100px auto",
         }}
       >
-        <Overlay />
-        <div className="circle-container">
-          <CircularProgressBar />
+        <Webcam
+          audio={false}
+          id="webcam"
+          ref={webcamRef}
+          screenshotFormat="image/jpeg"
+          videoConstraints={videoConstraints}
+          style={{
+            width: "100%",
+            height: "60%",
+            objectFit: "cover",
+            borderRadius: "4px",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            zIndex: 100,
+            width: "100%",
+          }}
+        >
+          <Overlay />
+          <div className="circle-container">
+            <CircularProgressBar />
+          </div>
         </div>
       </div>
     </div>
+    // <div>
+    //   <Camera />
+    // </div>
   );
 }
 
