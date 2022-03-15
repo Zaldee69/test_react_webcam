@@ -60,7 +60,7 @@ function App() {
           videoConstraints={videoConstraints}
           style={{
             width: "100%",
-            height: "200px",
+            height: "250px",
             objectFit: "cover",
             borderRadius: "4px",
           }}
