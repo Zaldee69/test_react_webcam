@@ -31,14 +31,14 @@ const CircularProgressBar = ({ percent, error }) => {
       viewBox="0 0 140 160"
       className="percent svg"
     >
-      <ellipse id="track" className="track" cx="50%" cy="50%" rx="55" ry="70" />
+      <ellipse id="track" className="track" cx="50%" cy="50%" rx="60" ry="71" />
       <ellipse
         id="circle"
         className="progress-circle"
         cx="50%"
         cy="50%"
-        rx="55"
-        ry="70"
+        rx="60"
+        ry="71"
       />
     </svg>
   );

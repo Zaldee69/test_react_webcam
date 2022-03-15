@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Overlay from "./Overlay";
 import Webcam from "react-webcam";
 import CircularProgressBar from "./CircularProgressBar";
-import Camera from "./Camera";
 function App() {
   const videoConstraints = {
     width: 680,
@@ -14,48 +13,43 @@ function App() {
 
   const wdth = useRef(null);
 
-  useEffect(() => {
-    const overlay = document.getElementById("overlay");
-    const overlayCircle = document.getElementById("overlay-circle");
-    const circle = document.getElementById("circle");
-    const track = document.getElementById("track");
-    const webcam = document.getElementById("webcam");
+  // useEffect(() => {
+  //   const overlay = document.getElementById("overlay");
+  //   const overlayCircle = document.getElementById("overlay-circle");
+  //   const circle = document.getElementById("circle");
+  //   const track = document.getElementById("track");
+  //   const webcam = document.getElementById("webcam");
 
-    overlay.style.height = webcam.clientHeight;
-    console.log(webcam.clientHeight);
+  //   overlay.style.height = webcam.clientHeight;
+  //   console.log(webcam.clientHeight);
 
-    if (webcam.clientHeight < 210) {
-      overlay.style.height = webcam.clientHeight;
-      overlayCircle.setAttribute("rx", webcam.clientHeight / 4);
-      overlayCircle.setAttribute("ry", webcam.clientWidth / 4);
-      circle.setAttribute("rx", webcam.clientHeight / 4);
-      circle.setAttribute("ry", webcam.clientWidth / 4 - 15);
-      track.setAttribute("rx", webcam.clientHeight / 4);
-      track.setAttribute("ry", webcam.clientWidth / 4 - 15);
-    } else {
-      overlay.style.height = webcam.clientHeight;
-      overlayCircle.setAttribute("rx", webcam.clientHeight / 4 - 10);
-      overlayCircle.setAttribute("ry", webcam.clientWidth / 4 - 10);
-      circle.setAttribute("rx", webcam.clientHeight / 4 - 10);
-      circle.setAttribute("ry", webcam.clientWidth / 4 - 25);
-      track.setAttribute("rx", webcam.clientHeight / 4 - 10);
-      track.setAttribute("ry", webcam.clientWidth / 4 - 25);
-    }
-  }, []);
+  //   if (webcam.clientHeight < 210) {
+  //     overlay.style.height = webcam.clientHeight;
+  //     overlayCircle.setAttribute("rx", webcam.clientHeight / 4);
+  //     overlayCircle.setAttribute("ry", webcam.clientWidth / 4);
+  //     circle.setAttribute("rx", webcam.clientHeight / 4);
+  //     circle.setAttribute("ry", webcam.clientWidth / 4 - 15);
+  //     track.setAttribute("rx", webcam.clientHeight / 4);
+  //     track.setAttribute("ry", webcam.clientWidth / 4 - 15);
+  //   } else {
+  //     overlay.style.height = webcam.clientHeight;
+  //     overlayCircle.setAttribute("rx", webcam.clientHeight / 4 - 10);
+  //     overlayCircle.setAttribute("ry", webcam.clientWidth / 4 - 10);
+  //     circle.setAttribute("rx", webcam.clientHeight / 4 - 10);
+  //     circle.setAttribute("ry", webcam.clientWidth / 4 - 25);
+  //     track.setAttribute("rx", webcam.clientHeight / 4 - 10);
+  //     track.setAttribute("ry", webcam.clientWidth / 4 - 25);
+  //   }
+  // }, []);
 
   return (
-    <div
-      style={{
-        backgroundColor: "#4F6EA0",
-      }}
-      className="container"
-    >
+    <div className="container">
       <div
         style={{
-          width: "90%",
-          height: "60%",
+          width: "80%",
+          height: "100%",
           position: "relative",
-          margin: "100px auto",
+          margin: "50px auto",
         }}
       >
         <Webcam
@@ -66,24 +60,15 @@ function App() {
           videoConstraints={videoConstraints}
           style={{
             width: "100%",
-            height: "60%",
+            height: "200px",
             objectFit: "cover",
             borderRadius: "4px",
           }}
         />
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            zIndex: 100,
-            width: "100%",
-          }}
-        >
-          <Overlay />
-          <div className="circle-container">
-            <CircularProgressBar />
-          </div>
+
+        {/* <Overlay /> */}
+        <div className="circle-container">
+          <CircularProgressBar />
         </div>
       </div>
     </div>

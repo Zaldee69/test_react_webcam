@@ -53,3 +53,21 @@ code {
   justify-content: center;
   align-items: center;
 }
+
+.container {
+  background-color: #4f6ea0;
+  width: 25%;
+  height: 100%;
+  padding: 1rem;
+  margin: 100px auto;
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    background-color: #4f6ea0;
+    width: 80%;
+    height: 100%;
+    padding: 1rem;
+    margin: 100px auto;
+  }
+}
