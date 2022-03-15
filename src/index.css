@@ -13,36 +13,6 @@ code {
     monospace;
 }
 
-.circle {
-  width: 182px;
-  height: 178px;
-  border-radius: 50%;
-  border: 3px dashed #ffffff;
-}
-
-.percent {
-  height: 100%;
-  width: 54%;
-  margin-top: -4px;
-}
-
-.percent .track {
-  stroke: #fff;
-  fill: none;
-  stroke-width: 2;
-  stroke-dasharray: 8;
-  transition: 0.5s;
-}
-
-/* .progress-circle {
-  stroke: #00875a;
-  fill: none;
-  stroke-width: 4;
-  stroke-dasharray: 490;
-  stroke-dashoffset: 0;
-  transition: 2s;
-} */
-
 .circle-container {
   position: absolute;
   top: 0;
